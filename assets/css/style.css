@@ -17,6 +17,7 @@ body {
   background: transparent;
 }
 
+
 body::before {
   content: "";
   position: fixed;
@@ -27,6 +28,20 @@ body::before {
   top: 0;
   height: 100vh;
   z-index: -1;
+}
+
+@media screen and (max-width: 500px) {
+  body::before {
+    height: 100vh;
+    margin: 0;
+    background: #222;
+    font-family: 'Inter', sans-serif;
+    background-image: url('../img/mobile.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center;
+    font-size: 120%;
+  }
 }
 
 @media (min-width: 1024px) {
