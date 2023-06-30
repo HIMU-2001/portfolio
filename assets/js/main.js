@@ -283,4 +283,24 @@
   
 
 })()
+const name = document.getElementById("name");
+const subject = document.getElementById("subject");
+const email = document.getElementById("email");
+const msg = document.getElementById("msg");
+const submit = document.getElementsByClassName("form-content")[0];
 
+submit.addEventListener('submit',(e)=>{
+  e.preventDefault();
+  Email.send({
+    SecureToken : "9d652c33-90ee-4d5f-b4e5-511396749fd5",
+    To : 'himanshu.quizzy@gmail.com',
+    From : "himanshuuu.2001@gmail.com",
+    Subject : subject.value,
+    Body : "<b>Name</b> :  "+name.value+
+            "<br> <b>Email</b> :  "+email.value+
+            "<br><b>Message</b> :  "+msg.value
+}).then(
+  message => alert("Message Sent !!")
+);
+e.target.reset();
+})
