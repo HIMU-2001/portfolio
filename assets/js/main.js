@@ -289,8 +289,10 @@ submit.addEventListener('submit',(e)=>{
     Body : "<b>Name</b> :  "+name.value+
             "<br> <b>Email</b> :  "+email.value+
             "<br><b>Message</b> :  "+msg.value
-}).then(
-  message => alert("Message Sent !!")
-);
+});
 e.target.reset();
+document.querySelector(".contact .php-email-form .sent-message").style.display="block";
+setTimeout(()=>{
+  document.querySelector(".contact .php-email-form .sent-message").style.display="none";
+},2500);
 })
